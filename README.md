@@ -3,15 +3,19 @@
 中国范围栅格瓦片底图，供 [ch32v467-cam](https://github.com/xeecos/ch32v467-cam)
 的「光污染」栏目使用：出门前看头顶这片天有多亮、往哪开一小时能到暗区。
 
-由 OpenStreetMap 数据离屏渲染，Web Mercator / 256 px，缩放 **z4–z10**。
+由 OpenStreetMap 数据离屏渲染，Web Mercator / 256 px，缩放 **z4–z12**。
 
 ## 用法
 
 ```
-https://cdn.jsdmirror.com/gh/xeecos/StreetData@2026.11.2/{z}/{x}/{y}.webp
-https://cdn.osyb.cn/gh/xeecos/StreetData@2026.11.2/{z}/{x}/{y}.webp
-https://cdn.jsdelivr.net/gh/xeecos/StreetData@2026.11.2/{z}/{x}/{y}.webp
+https://cdn.jsdmirror.com/gh/xeecos/StreetData@2026.11.5/{z}/{x}/{y}.webp
+https://cdn.osyb.cn/gh/xeecos/StreetData@2026.11.5/{z}/{x}/{y}.webp
+https://cdn.jsdelivr.net/gh/xeecos/StreetData@2026.11.5/{z}/{x}/{y}.webp
+https://raw.githubusercontent.com/xeecos/StreetData/2026.11.5/{z}/{x}/{y}.webp
 ```
+
+前两个是国内节点，客户端默认按这个顺序试；jsDelivr 只作兜底
+（本仓库已超出它惯常的体积门限，不保证服务），raw 最后。
 
 - z ≥ 8 的路径多一层分桶：`{z}/{x>>3}/{x}/{y}.{ext}`
 - **当前所有瓦片都是 `.webp`**（z4–z7 逐片比过 WebP/JPEG，WebP 100% 更小）。
@@ -39,5 +43,5 @@ tools/verify.py             逐片 magic byte + 尺寸 + 片数核对
 
 ## 体积
 
-合计 72951012 字节
+合计 239205198 字节
 （单文件 ≤ 20 MB、仓库 ≤ 150 MB —— jsDelivr 的限制）。
