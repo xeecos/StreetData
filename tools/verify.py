@@ -11,6 +11,10 @@ import random
 import struct
 import sys
 
+# 瓦片边长：256 = 常规，512 = @2x。出 @2x 时用 `TILE_PX=512` 覆盖，
+# 否则校验脚本会把全部瓦片误判成「尺寸不对」。
+TILE = int(os.environ.get("TILE_PX", "256"))
+
 
 def dims_webp(b):
     if b[:4] != b"RIFF" or b[8:12] != b"WEBP":
@@ -101,7 +105,7 @@ def main():
             if d is None:
                 problems.append("magic byte 不对 %s" % p)
                 bad += 1
-            elif d != (256, 256):
+            elif d != (TILE, TILE):
                 problems.append("尺寸 %s = %s" % (p, d))
                 bad += 1
 
