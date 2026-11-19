@@ -12,10 +12,10 @@
 ## 用法
 
 ```
-https://cdn.jsdmirror.com/gh/xeecos/StreetData@2026.11.7/{z}/{x}/{y}.webp
-https://cdn.osyb.cn/gh/xeecos/StreetData@2026.11.7/{z}/{x}/{y}.webp
-https://cdn.jsdelivr.net/gh/xeecos/StreetData@2026.11.7/{z}/{x}/{y}.webp
-https://raw.githubusercontent.com/xeecos/StreetData/2026.11.7/{z}/{x}/{y}.webp
+https://cdn.jsdmirror.com/gh/xeecos/StreetData@2026.11.8/{z}/{x}/{y}.webp
+https://cdn.osyb.cn/gh/xeecos/StreetData@2026.11.8/{z}/{x}/{y}.webp
+https://cdn.jsdelivr.net/gh/xeecos/StreetData@2026.11.8/{z}/{x}/{y}.webp
+https://raw.githubusercontent.com/xeecos/StreetData/2026.11.8/{z}/{x}/{y}.webp
 ```
 
 前两个是国内节点，客户端默认按这个顺序试；jsDelivr 只作兜底
@@ -47,5 +47,5 @@ tools/verify.py             逐片 magic byte + 尺寸 + 片数核对
 
 ## 体积
 
-合计 1095447182 字节
+合计 1094753798 字节
 （单文件 ≤ 20 MB、仓库 ≤ 150 MB —— jsDelivr 的限制）。
